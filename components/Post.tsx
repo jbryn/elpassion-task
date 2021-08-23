@@ -1,37 +1,38 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import "@fontsource/montserrat";
 
-export default function Post() {
+type PostProps = {
+  imageUrl: string;
+};
+
+export default function Post(props: PostProps) {
+  const { imageUrl } = props;
+  // const frameWidth = useBreakpointValue({ base: "343px", md: "800px" });
   return (
     //frame
-    <Box
-      w={"343px"}
+    <Flex
+      direction="column"
+      w={{ base: "343px", md: "800px" }}
       h={"360px"}
       left={"0px"}
       top={"0px"}
       border={"2px solid #000000"}
     >
-      <Box pos="relative" w="100%" h="65%">
-        <Image
-          alt="Rihanna"
-          src="/rihanna.svg"
-          layout="fill"
-          objectFit="cover"
-        />
-      </Box>
+      {/* <Box pos="relative" w="100%" h="65%">
+        <Image alt="Rihanna" src={imageUrl} layout="fill" objectFit="cover" />
+      </Box> */}
+      {/* spacer */}
       <Box
         position={"relative"}
-        w={"339px"}
+        w={"100%"}
         h={"2px"}
         left={"0px"}
-        // top={"226px"}
+        top={"-2px"}
         bg={"#000000"}
       />
 
-      {/* spacer */}
-
-      <Flex
+      {/* <Flex
         position={"relative"}
         alignItems={"center"}
         p={"4px 8px"}
@@ -54,8 +55,8 @@ export default function Post() {
         >
           HIP-HOP
         </Text>
-      </Flex>
-      <Box w="100%" h="40%">
+      </Flex> */}
+      {/* <Box w="100%" h="35%">
         <Text
           position="relative"
           width="319px"
@@ -87,10 +88,10 @@ export default function Post() {
             Piotr Żelazny
           </Text>
         </Box>
-      </Box>
+      </Box> */}
 
-      <Box position="absolute" w="48px" h="48px" right="0px" top="0px">
-        {/* ribbon square*/}
+      {/* <Box position="absolute" w="48px" h="48px" right="0px" top="0px">
+        
         <Box
           pos="absolute"
           left="0px"
@@ -121,7 +122,7 @@ export default function Post() {
             />
           </Box>
         </Box>
-      </Box>
-    </Box>
+      </Box> */}
+    </Flex>
   );
 }

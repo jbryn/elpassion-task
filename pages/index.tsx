@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Post from "../components/Post";
 import styles from "../styles/Home.module.css";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex position="absolute" direction="column" alignItems="center" p="2px">
-        <Post />
+        <Post imageUrl="/rihanna.svg" />
       </Flex>
     </div>
   );
