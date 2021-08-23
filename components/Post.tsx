@@ -12,25 +12,30 @@ export default function Post(props: PostProps) {
   return (
     //frame
     <Flex
-      direction="column"
+      direction={{ base: "column", md: "row" }}
       w={{ base: "343px", md: "800px" }}
-      h={"360px"}
+      h={{ base: "360px", md: "266px" }}
       left={"0px"}
       top={"0px"}
       border={"2px solid #000000"}
     >
-      {/* <Box pos="relative" w="100%" h="65%">
-        <Image alt="Rihanna" src={imageUrl} layout="fill" objectFit="cover" />
-      </Box> */}
-      {/* spacer */}
       <Box
-        position={"relative"}
-        w={"100%"}
-        h={"2px"}
-        left={"0px"}
-        top={"-2px"}
-        bg={"#000000"}
-      />
+        pos="relative"
+        w={{ base: "100%", md: "48%" }}
+        h={{ base: "65%", md: "100%" }}
+      >
+        {/* spacer */}
+        {/* <Box
+          position="relative"
+          width={{ base: "339px", md: "266px" }}
+          height="2px"
+          left={{ base: "0px", md: "251px" }}
+          top={{ base: "232px", md: "130px" }}
+          bg="black"
+          transform={{ base: "none", md: "rotate(90deg)" }}
+        /> */}
+        <Image alt="Rihanna" src={imageUrl} layout="fill" objectFit="cover" />
+      </Box>
 
       {/* <Flex
         position={"relative"}
@@ -38,8 +43,8 @@ export default function Post(props: PostProps) {
         p={"4px 8px"}
         w={"73px"}
         h={"22px"}
-        left={"10px"}
-        top={"-13px"}
+        left={{ base: "10px", md: "20px" }}
+        top={{ base: "-13px", md: "220px" }}
         bg={"#1300E8"}
         border={"2px solid #000000"}
         boxSizing={"border-box"}
@@ -56,12 +61,17 @@ export default function Post(props: PostProps) {
           HIP-HOP
         </Text>
       </Flex> */}
-      {/* <Box w="100%" h="35%">
-        <Text
+      <Box
+        w={{ base: "100%", md: "52%" }}
+        h={{ base: "35%", md: "100%" }}
+        borderTop={{ base: "2px solid #000000", md: "none" }}
+        borderLeft={{ base: "none", md: "2px solid #000000" }}
+      >
+        {/* <Text
           position="relative"
           width="319px"
           height="60px"
-          top="-15px"
+          top="0px"
           left="10px"
           fontWeight={900}
           fontSize="16px"
@@ -70,14 +80,8 @@ export default function Post(props: PostProps) {
         >
           {"Poprzednia dekada nalezala do Drake`a. "}
           {"Jak Kanadyjczyk wplynal na muzyke popularna?"}
-        </Text>
-        <Box
-          position="relative"
-          w="148px"
-          height="16px"
-          top="-20px"
-          left="10px"
-        >
+        </Text> */}
+        {/* <Box position="relative" w="148px" height="16px" top="10px" left="10px">
           <Text
             fontSize="12px"
             color="#1300E8"
@@ -87,11 +91,10 @@ export default function Post(props: PostProps) {
           >
             Piotr Żelazny
           </Text>
-        </Box>
-      </Box> */}
+        </Box> */}
+      </Box>
 
-      {/* <Box position="absolute" w="48px" h="48px" right="0px" top="0px">
-        
+      <Box position="absolute" w="48px" h="48px" right="0px" top="0px">
         <Box
           pos="absolute"
           left="0px"
@@ -122,7 +125,7 @@ export default function Post(props: PostProps) {
             />
           </Box>
         </Box>
-      </Box> */}
+      </Box>
     </Flex>
   );
 }
