@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import "@fontsource/montserrat";
 
@@ -12,10 +12,11 @@ type PostProps = {
 
 export default function Post(props: PostProps) {
   const { imageUrl, tagName, title, author, createdAt } = props;
-  const [isLargerThan30em] = useMediaQuery("(min-width: 58em)");
+  const breakpoint = useBreakpointValue({ base: "base", md: "md" });
   return (
     //frame
     <Flex
+      position="relative"
       direction={{ base: "column", md: "row" }}
       w={{ base: "343px", md: "800px" }}
       h={{ base: "360px", md: "266px" }}
@@ -23,6 +24,14 @@ export default function Post(props: PostProps) {
       top={"0px"}
       border={"2px solid #000000"}
     >
+      {/* <Box
+        position="absolute"
+        w="50px"
+        h="50px"
+        bg="red"
+        right="0px"
+        zIndex="1"
+      /> */}
       <Box
         pos="relative"
         w={{ base: "100%", md: "48%" }}
@@ -61,13 +70,34 @@ export default function Post(props: PostProps) {
         borderTop={{ base: "2px solid #000000", md: "none" }}
         borderLeft={{ base: "none", md: "2px solid #000000" }}
       >
-        {isLargerThan30em ? (
+        {breakpoint === "md" ? (
           <Box
             position="relative"
             w="100%"
             h="46px"
             borderBottom="2px solid #000000"
-          ></Box>
+          >
+            <Flex
+              position="relative"
+              w="100%"
+              height="16px"
+              top="30%"
+              left="10px"
+              fontSize="12px"
+            >
+              <Text
+                color="#1300E8"
+                letterSpacing="-0.04em"
+                fontWeight="800"
+                lineHeight="16px"
+              >
+                {author}
+              </Text>
+              <Text color="#757575" marginLeft="2">
+                {createdAt}
+              </Text>
+            </Flex>
+          </Box>
         ) : (
           <div></div>
         )}
@@ -82,8 +112,7 @@ export default function Post(props: PostProps) {
           letterSpacing={{ base: "-0.04em", md: "-0.01em" }}
           lineHeight={{ base: "20px", md: "28px" }}
         >
-          {"Poprzednia dekada nalezala do Drake`a. "}
-          {"Jak Kanadyjczyk wplynal na muzyke popularna?"}
+          {title}
         </Text>
         <Flex
           position="relative"
@@ -92,6 +121,8 @@ export default function Post(props: PostProps) {
           top="33px"
           left="10px"
           fontSize="12px"
+          // display={{ base: "block", md: "none" }}
+          visibility={{ base: "visible", md: "hidden" }}
         >
           <Text
             color="#1300E8"
@@ -107,7 +138,7 @@ export default function Post(props: PostProps) {
         </Flex>
       </Box>
 
-      <Box position="absolute" w="48px" h="48px" right="1px" top="2px">
+      <Box position="absolute" w="48px" h="48px" right="-2px" top="-2px">
         <Box
           pos="absolute"
           left="0px"
@@ -126,15 +157,23 @@ export default function Post(props: PostProps) {
             left="calc(50% - 24px/2)"
             top="calc(50% - 24px/2)"
           >
+            {/* <Box
+              w="0"
+              h="15px"
+              borderRight="6px solid blue"
+              borderLeft="6px solid blue"
+              borderBottom="6px solid transparent"
+            /> */}
             <Box
               pos="absolute"
               left="29.17%"
               right="29.17%"
               top="8.33%"
               bottom="8.33%"
-              border="2px solid #000000"
+              borderRight="2px solid #000000"
+              borderLeft="2px solid #000000"
               borderBottom="2px solid transparent"
-              boxSizing="border-box"
+              // boxSizing="border-box"
             />
           </Box>
         </Box>
