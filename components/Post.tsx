@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import "@fontsource/montserrat";
 
@@ -8,7 +8,7 @@ type PostProps = {
 
 export default function Post(props: PostProps) {
   const { imageUrl } = props;
-  // const frameWidth = useBreakpointValue({ base: "343px", md: "800px" });
+  const [isLargerThan20em] = useMediaQuery("(min-width: 20em)");
   return (
     //frame
     <Flex
@@ -35,38 +35,46 @@ export default function Post(props: PostProps) {
           transform={{ base: "none", md: "rotate(90deg)" }}
         /> */}
         <Image alt="Rihanna" src={imageUrl} layout="fill" objectFit="cover" />
-      </Box>
 
-      {/* <Flex
-        position={"relative"}
-        alignItems={"center"}
-        p={"4px 8px"}
-        w={"73px"}
-        h={"22px"}
-        left={{ base: "10px", md: "20px" }}
-        top={{ base: "-13px", md: "220px" }}
-        bg={"#1300E8"}
-        border={"2px solid #000000"}
-        boxSizing={"border-box"}
-        boxShadow={"2px 2px 0px #000000"}
-      >
-        <Text
-          // fontFamily={"Montserrat"}
-          fontStyle={"normal"}
-          fontWeight={"900"}
-          fontSize={"11px"}
-          // lineHeight={"14px"}
-          color={"#FFFFFF"}
+        <Flex
+          position={"relative"}
+          alignItems={"center"}
+          p={"4px 8px"}
+          w={"73px"}
+          h={"22px"}
+          left={{ base: "10px", md: "400px" }}
+          top={{ base: "222px", md: "220px" }}
+          bg={"#1300E8"}
+          border={"2px solid #000000"}
+          boxSizing={"border-box"}
+          boxShadow={"2px 2px 0px #000000"}
         >
-          HIP-HOP
-        </Text>
-      </Flex> */}
+          <Text
+            // fontFamily={"Montserrat"}
+            fontStyle={"normal"}
+            fontWeight={"900"}
+            fontSize={"11px"}
+            // lineHeight={"14px"}
+            color={"#FFFFFF"}
+          >
+            HIP-HOP
+          </Text>
+        </Flex>
+      </Box>
       <Box
         w={{ base: "100%", md: "52%" }}
         h={{ base: "35%", md: "100%" }}
         borderTop={{ base: "2px solid #000000", md: "none" }}
         borderLeft={{ base: "none", md: "2px solid #000000" }}
       >
+        {isLargerThan20em && (
+          <Box
+            position="relative"
+            w="100%"
+            h="46px"
+            borderBottom="2px solid #000000"
+          ></Box>
+        )}
         {/* <Text
           position="relative"
           width="319px"
@@ -94,7 +102,7 @@ export default function Post(props: PostProps) {
         </Box> */}
       </Box>
 
-      <Box position="absolute" w="48px" h="48px" right="0px" top="0px">
+      <Box position="absolute" w="48px" h="48px" right="1px" top="2px">
         <Box
           pos="absolute"
           left="0px"
