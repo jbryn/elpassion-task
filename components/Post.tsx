@@ -4,11 +4,15 @@ import "@fontsource/montserrat";
 
 type PostProps = {
   imageUrl: string;
+  tagName: string;
+  title: string;
+  author: string;
+  createdAt: string;
 };
 
 export default function Post(props: PostProps) {
-  const { imageUrl } = props;
-  const [isLargerThan20em] = useMediaQuery("(min-width: 20em)");
+  const { imageUrl, tagName, title, author, createdAt } = props;
+  const [isLargerThan30em] = useMediaQuery("(min-width: 58em)");
   return (
     //frame
     <Flex
@@ -24,16 +28,6 @@ export default function Post(props: PostProps) {
         w={{ base: "100%", md: "48%" }}
         h={{ base: "65%", md: "100%" }}
       >
-        {/* spacer */}
-        {/* <Box
-          position="relative"
-          width={{ base: "339px", md: "266px" }}
-          height="2px"
-          left={{ base: "0px", md: "251px" }}
-          top={{ base: "232px", md: "130px" }}
-          bg="black"
-          transform={{ base: "none", md: "rotate(90deg)" }}
-        /> */}
         <Image alt="Rihanna" src={imageUrl} layout="fill" objectFit="cover" />
 
         <Flex
@@ -57,7 +51,7 @@ export default function Post(props: PostProps) {
             // lineHeight={"14px"}
             color={"#FFFFFF"}
           >
-            HIP-HOP
+            {tagName}
           </Text>
         </Flex>
       </Box>
@@ -67,39 +61,50 @@ export default function Post(props: PostProps) {
         borderTop={{ base: "2px solid #000000", md: "none" }}
         borderLeft={{ base: "none", md: "2px solid #000000" }}
       >
-        {isLargerThan20em && (
+        {isLargerThan30em ? (
           <Box
             position="relative"
             w="100%"
             h="46px"
             borderBottom="2px solid #000000"
           ></Box>
+        ) : (
+          <div></div>
         )}
-        {/* <Text
+        <Text
           position="relative"
-          width="319px"
+          width={{ base: "319px", md: "350px" }}
           height="60px"
-          top="0px"
+          top="20px"
           left="10px"
           fontWeight={900}
-          fontSize="16px"
-          letterSpacing="-0.04em"
-          lineHeight="20px"
+          fontSize={{ base: "16px", md: "24px" }}
+          letterSpacing={{ base: "-0.04em", md: "-0.01em" }}
+          lineHeight={{ base: "20px", md: "28px" }}
         >
           {"Poprzednia dekada nalezala do Drake`a. "}
           {"Jak Kanadyjczyk wplynal na muzyke popularna?"}
-        </Text> */}
-        {/* <Box position="relative" w="148px" height="16px" top="10px" left="10px">
+        </Text>
+        <Flex
+          position="relative"
+          w="100%"
+          height="16px"
+          top="33px"
+          left="10px"
+          fontSize="12px"
+        >
           <Text
-            fontSize="12px"
             color="#1300E8"
             letterSpacing="-0.04em"
             fontWeight="800"
             lineHeight="16px"
           >
-            Piotr Żelazny
+            {author}
           </Text>
-        </Box> */}
+          <Text color="#757575" marginLeft="2">
+            {createdAt}
+          </Text>
+        </Flex>
       </Box>
 
       <Box position="absolute" w="48px" h="48px" right="1px" top="2px">
