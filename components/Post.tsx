@@ -24,14 +24,6 @@ export default function Post(props: PostProps) {
       top={"0px"}
       border={"2px solid #000000"}
     >
-      {/* <Box
-        position="absolute"
-        w="50px"
-        h="50px"
-        bg="red"
-        right="0px"
-        zIndex="1"
-      /> */}
       <Box
         pos="relative"
         w={{ base: "100%", md: "48%" }}
@@ -53,11 +45,11 @@ export default function Post(props: PostProps) {
           boxShadow={"2px 2px 0px #000000"}
         >
           <Text
-            // fontFamily={"Montserrat"}
+            fontFamily={"Montserrat"}
             fontStyle={"normal"}
             fontWeight={"900"}
             fontSize={"11px"}
-            // lineHeight={"14px"}
+            lineHeight={"14px"}
             color={"#FFFFFF"}
           >
             {tagName}
@@ -157,14 +149,14 @@ export default function Post(props: PostProps) {
             left="calc(50% - 24px/2)"
             top="calc(50% - 24px/2)"
           >
-            {/* <Box
+            <Box
               w="0"
               h="15px"
               borderRight="6px solid blue"
               borderLeft="6px solid blue"
               borderBottom="6px solid transparent"
-            /> */}
-            <Box
+            />
+            {/* <Box
               pos="absolute"
               left="29.17%"
               right="29.17%"
@@ -174,7 +166,7 @@ export default function Post(props: PostProps) {
               borderLeft="2px solid #000000"
               borderBottom="2px solid transparent"
               // boxSizing="border-box"
-            />
+            /> */}
           </Box>
         </Box>
       </Box>

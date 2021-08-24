@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Post from "../components/Post";
+import Podcast from "../components/Podcast";
 import styles from "../styles/Home.module.css";
 import { Flex, Box, VStack } from "@chakra-ui/react";
 
@@ -24,11 +25,14 @@ const Home: NextPage = () => {
         position="absolute"
         direction="column"
         alignItems="center"
-        p="2px"
+        top="30px"
+        left="30px"
+        right="30px"
+        // p="200px"
         spacing="20px"
-        m="200px"
+        // marginBottom="300px"
       >
-        <Post
+        {/* <Post
           imageUrl="/rihanna.svg"
           tagName="HIP-HOP"
           title={titles.post1}
@@ -41,7 +45,8 @@ const Home: NextPage = () => {
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
-        />
+        /> */}
+        <Podcast />
       </VStack>
     </div>
   );
