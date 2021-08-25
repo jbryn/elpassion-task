@@ -1,6 +1,6 @@
 import { Box, Flex, Text, useBreakpointValue, Icon } from "@chakra-ui/react";
 import Image from "next/image";
-import "@fontsource/montserrat";
+import "@fontsource/montserrat/900.css";
 
 type PostProps = {
   imageUrl: string;
@@ -91,7 +91,7 @@ export default function Post(props: PostProps) {
             </Flex>
           </Box>
         ) : (
-          <div></div>
+          <div />
         )}
         <Text
           position="relative"
