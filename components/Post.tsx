@@ -2,15 +2,6 @@ import { Box, Flex, Text, useBreakpointValue, Icon } from "@chakra-ui/react";
 import Image from "next/image";
 import "@fontsource/montserrat";
 
-const CircleIcon = () => (
-  <Icon viewBox="0 0 200 200">
-    <path
-      fill="currentColor"
-      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
-    />
-  </Icon>
-);
-
 type PostProps = {
   imageUrl: string;
   tagName: string;
@@ -122,7 +113,6 @@ export default function Post(props: PostProps) {
           top="33px"
           left="10px"
           fontSize="12px"
-          // display={{ base: "block", md: "none" }}
           visibility={{ base: "visible", md: "hidden" }}
         >
           <Text
@@ -159,30 +149,15 @@ export default function Post(props: PostProps) {
             top="calc(50% - 24px/2)"
           >
             <Box
-              // w="0"
               h="20px"
               pos="absolute"
               left="29.17%"
               right="29.17%"
               top="8.33%"
               bottom="8.33%"
-              borderTop="6px solid #000000"
-              borderRight="6px solid #000000"
-              borderLeft="6px solid #000000"
-              borderBottom="6px solid transparent"
               boxSizing="border-box"
+              backgroundImage="/bookmark.svg"
             />
-            {/* <Box
-              pos="absolute"
-              left="29.17%"
-              right="29.17%"
-              top="8.33%"
-              bottom="8.33%"
-              borderRight="2px solid #000000"
-              borderLeft="2px solid #000000"
-              borderBottom="2px solid transparent"
-              boxSizing="border-box"
-            /> */}
           </Box>
         </Box>
       </Box>
