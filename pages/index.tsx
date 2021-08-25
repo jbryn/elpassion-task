@@ -4,6 +4,18 @@ import Post from "../components/Post";
 import Podcast from "../components/Podcast";
 import styles from "../styles/Home.module.css";
 import { Flex, Box, VStack } from "@chakra-ui/react";
+import styled from "styled-components";
+
+const Ribbon = styled.div`
+  width: 0px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-bottom: 25px solid transparent;
+  border-top: none;
+  border-left: 50px solid #096ae8;
+  border-right: 50px solid #096ae8;
+`;
 
 const titles = {
   post1: `Poprzednia dekada nalezala do Drake'a. Jak Kanadyjczyk wplynal na muzyke popularna?`,
@@ -32,20 +44,13 @@ const Home: NextPage = () => {
         spacing="20px"
         // marginBottom="300px"
       >
-        {/* <Post
+        <Post
           imageUrl="/rihanna.svg"
           tagName="HIP-HOP"
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
         />
-        <Post
-          imageUrl="/coachella.svg"
-          tagName="HIP-HOP"
-          title={titles.post1}
-          author={authors.author1}
-          createdAt={"1 godz. temu"}
-        /> */}
         <Podcast />
       </VStack>
     </div>
