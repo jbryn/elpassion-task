@@ -3,7 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Running application
 
 First, clone the repository.
-Then, install all required dependencies by running terminal command:
+
+Once the repository is cloned, install all required dependencies by running terminal command:
 
 ```bash
 npm install
@@ -18,9 +19,7 @@ npm run dev
 # or
 yarn dev
 ```
-and navigate to 
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and navigate to [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Learn More
 
