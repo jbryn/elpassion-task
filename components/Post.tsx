@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useBreakpointValue, Icon } from "@chakra-ui/react";
+import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import "@fontsource/montserrat/900.css";
 

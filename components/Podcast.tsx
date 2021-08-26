@@ -1,5 +1,13 @@
-import { Box, Flex, Text, Grid, GridItem } from "@chakra-ui/react";
-import Image from "next/image";
+import {
+  Box,
+  Flex,
+  Text,
+  Grid,
+  GridItem,
+  Square,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import Icon from "../components/Icon";
 
 type PodcastProps = {
   title: string;
@@ -8,6 +16,7 @@ type PodcastProps = {
 
 export default function Post(props: PodcastProps) {
   const { title, coverUrl } = props;
+  const breakpoint = useBreakpointValue({ base: "base", md: "md" });
 
   return (
     <Grid
@@ -26,52 +35,25 @@ export default function Post(props: PodcastProps) {
         rowSpan={{ base: "auto", md: 2 }}
         backgroundImage={coverUrl}
         backgroundSize="cover"
-      >
-        {/* <Image
-          alt="Rihanna"
-          src={"/rudzki_ras.svg"}
-          width="100%"
-          height="100%"
-        /> */}
-      </GridItem>
+      ></GridItem>
       <GridItem
         colStart={{ base: "auto", md: 2 }}
         colSpan={{ base: "auto", md: 3 }}
         bg="#000000"
       ></GridItem>
-      <GridItem colStart={{ base: "auto", md: 2 }} bg="#000000" />
-      <GridItem bg="#000000"></GridItem>
+
+      <GridItem colStart={{ base: "auto", md: 2 }} bg="#000000">
+        {breakpoint === "base" && <Icon iconUrl="/playbutton.svg" />}
+      </GridItem>
       <GridItem bg="#000000">
-        <Box position="relative" w="48px" h="48px">
-          <Box
-            pos="absolute"
-            left="0px"
-            right="0px"
-            top="0px"
-            bottom="0px"
-            bg="#000000"
-            boxSizing="border-box"
-          >
-            <Box
-              pos="absolute"
-              w="24px"
-              h="24px"
-              left="calc(50% - 24px/2)"
-              top="calc(50% - 24px/2)"
-            >
-              <Box
-                h="20px"
-                pos="absolute"
-                left="29.17%"
-                right="29.17%"
-                top="8.33%"
-                bottom="8.33%"
-                boxSizing="border-box"
-                backgroundImage="/bookmark2.svg"
-              />
-            </Box>
-          </Box>
-        </Box>
+        {breakpoint === "md" ? (
+          <Icon iconUrl="/playbutton.svg" />
+        ) : (
+          <Icon iconUrl="/bookmark2.svg" />
+        )}
+      </GridItem>
+      <GridItem bg="#000000">
+        {breakpoint === "md" && <Icon iconUrl="/bookmark2.svg" />}
       </GridItem>
     </Grid>
   );
