@@ -8,13 +8,14 @@ type PostProps = {
   title: string;
   author: string;
   createdAt: string;
+  hasBottomGallery: boolean;
 };
 
 export default function Post(props: PostProps) {
-  const { imageUrl, tagName, title, author, createdAt } = props;
+  const { imageUrl, tagName, title, author, createdAt, hasBottomGallery } =
+    props;
   const breakpoint = useBreakpointValue({ base: "base", md: "md" });
   return (
-    //frame
     <Flex
       position="relative"
       direction={{ base: "column", md: "row" }}
@@ -161,6 +162,26 @@ export default function Post(props: PostProps) {
           </Box>
         </Box>
       </Box>
+      {hasBottomGallery && (
+        <Box pos="absolute" w="331px" h="9px" left="6px" top="357px">
+          <Box
+            pos="absolute"
+            height="6px"
+            left="4px"
+            right="4px"
+            bottom="4px"
+            border="2px solid #000000"
+          />
+          <Box
+            pos="absolute"
+            height="6px"
+            left="12px"
+            right="12px"
+            bottom="0px"
+            border="2px solid #000000"
+          />
+        </Box>
+      )}
     </Flex>
   );
 }

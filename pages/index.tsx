@@ -41,6 +41,7 @@ const Home: NextPage = () => {
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
+          hasBottomGallery={false}
         />
         <Podcast
           title={titles.podcast1}
@@ -53,6 +54,7 @@ const Home: NextPage = () => {
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
+          hasBottomGallery={false}
         />
         <Post
           imageUrl="/reebok.svg"
@@ -60,6 +62,7 @@ const Home: NextPage = () => {
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
+          hasBottomGallery={false}
         />
         <Podcast
           title={titles.podcast1}
@@ -72,6 +75,7 @@ const Home: NextPage = () => {
           title={titles.post1}
           author={authors.author1}
           createdAt={"1 godz. temu"}
+          hasBottomGallery={true}
         />
         <Podcast
           title={titles.podcast1}
