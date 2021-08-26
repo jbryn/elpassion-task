@@ -38,28 +38,28 @@ export default function Post(props: PodcastProps) {
       >
         <Text
           pos="absolute"
-          w="219px"
+          w={{ base: "219px", md: "250px" }}
           h="16px"
           left="12px"
           right="12px"
           top="12px"
-          fontSize="12px"
-          lineHeight="16px"
-          letterSpacing="-0.03em"
+          fontSize={{ base: "12px", md: "14px" }}
+          lineHeight={{ base: "16px", md: "20px" }}
+          letterSpacing={{ base: "-0.03em", md: "-0.015em" }}
           color="#FFFFFF"
         >
           {title}
         </Text>
         <Text
           pos="absolute"
-          w="200px"
-          h="16px"
+          w={{ base: "200px", md: "579px" }}
+          h="60px"
           left="12px"
           right="12px"
-          top="32px"
-          fontSize="18px"
+          top={{ base: "32px", md: "36px" }}
+          fontSize={{ base: "18px", md: "24px" }}
           fontWeight="900"
-          lineHeight="20px"
+          lineHeight={{ base: "20px", md: "28px" }}
           letterSpacing="-0.01em"
           color="#FFFFFF"
         >
