@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Post from "../components/Post";
 import Podcast from "../components/Podcast";
+import MoreArticles from "../components/MoreArticles";
 import { VStack } from "@chakra-ui/react";
 
 const titles = {
@@ -26,13 +27,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <VStack
-        position="absolute"
         direction="column"
         alignItems="center"
-        top="30px"
-        left="30px"
-        right="30px"
-        marginBottom="30px"
+        marginY="30px"
         spacing="20px"
       >
         <Post
@@ -82,6 +79,7 @@ const Home: NextPage = () => {
           subtitle={subtitles.podcast1}
           coverUrl="/bolesne_poranki.svg"
         />
+        <MoreArticles />
       </VStack>
     </div>
   );

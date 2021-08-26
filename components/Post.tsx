@@ -24,6 +24,7 @@ export default function Post(props: PostProps) {
       left={"0px"}
       top={"0px"}
       border={"2px solid #000000"}
+      marginBottom={hasBottomGallery ? "10px" : ""}
     >
       <Box
         pos="relative"
