@@ -12,7 +12,7 @@ npm install
 yarn install
 ```
 
-Lastly, run:
+After installing dependencies finishes, again inside terminal, run:
 
 ```bash
 npm run dev
