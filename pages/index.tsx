@@ -2,24 +2,15 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Post from "../components/Post";
 import Podcast from "../components/Podcast";
-import styles from "../styles/Home.module.css";
-import { Flex, Box, VStack } from "@chakra-ui/react";
-import styled from "styled-components";
-
-const Ribbon = styled.div`
-  width: 0px;
-  height: 150px;
-  box-sizing: border-box;
-  border: 1px solid #000;
-  border-bottom: 25px solid transparent;
-  border-top: none;
-  border-left: 50px solid #096ae8;
-  border-right: 50px solid #096ae8;
-`;
+import { VStack } from "@chakra-ui/react";
 
 const titles = {
   post1: `Poprzednia dekada nalezala do Drake'a. Jak Kanadyjczyk wplynal na muzyke popularna?`,
-  podcast1: ``,
+  podcast1: `Rozmowy: Wojewódzki & Kędzierski`,
+};
+
+const subtitles = {
+  podcast1: `Bodnar: Jakim samochodem jeździ rzecznik`,
 };
 
 const authors = {
@@ -51,7 +42,11 @@ const Home: NextPage = () => {
           author={authors.author1}
           createdAt={"1 godz. temu"}
         />
-        <Podcast title={titles.podcast1} coverUrl="/rudzki_ras.svg" />
+        <Podcast
+          title={titles.podcast1}
+          subtitle={subtitles.podcast1}
+          coverUrl="/rudzki_ras.svg"
+        />
         <Post
           imageUrl="/coachella.svg"
           tagName="HIP-HOP"
@@ -66,7 +61,11 @@ const Home: NextPage = () => {
           author={authors.author1}
           createdAt={"1 godz. temu"}
         />
-        <Podcast title={titles.podcast1} coverUrl="/bolesne_poranki.svg" />
+        <Podcast
+          title={titles.podcast1}
+          subtitle={subtitles.podcast1}
+          coverUrl="/bolesne_poranki.svg"
+        />
         <Post
           imageUrl="/coachella.svg"
           tagName="HIP-HOP"
@@ -74,7 +73,11 @@ const Home: NextPage = () => {
           author={authors.author1}
           createdAt={"1 godz. temu"}
         />
-        <Podcast title={titles.podcast1} coverUrl="/bolesne_poranki.svg" />
+        <Podcast
+          title={titles.podcast1}
+          subtitle={subtitles.podcast1}
+          coverUrl="/bolesne_poranki.svg"
+        />
       </VStack>
     </div>
   );

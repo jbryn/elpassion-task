@@ -1,25 +1,19 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Grid,
-  GridItem,
-  Square,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Text, Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 import Icon from "../components/Icon";
 
 type PodcastProps = {
   title: string;
+  subtitle: string;
   coverUrl: string;
 };
 
 export default function Post(props: PodcastProps) {
-  const { title, coverUrl } = props;
+  const { title, subtitle, coverUrl } = props;
   const breakpoint = useBreakpointValue({ base: "base", md: "md" });
 
   return (
     <Grid
+      position="relative"
       w={{ base: "343px", md: "800px" }}
       h={{ base: "148px", md: "168px" }}
       templateRows={{ base: "98px 1fr", md: "118px 1fr" }}
@@ -35,12 +29,43 @@ export default function Post(props: PodcastProps) {
         rowSpan={{ base: "auto", md: 2 }}
         backgroundImage={coverUrl}
         backgroundSize="cover"
-      ></GridItem>
+      />
       <GridItem
+        pos="relative"
         colStart={{ base: "auto", md: 2 }}
         colSpan={{ base: "auto", md: 3 }}
         bg="#000000"
-      ></GridItem>
+      >
+        <Text
+          pos="absolute"
+          w="219px"
+          h="16px"
+          left="12px"
+          right="12px"
+          top="12px"
+          fontSize="12px"
+          lineHeight="16px"
+          letterSpacing="-0.03em"
+          color="#FFFFFF"
+        >
+          {title}
+        </Text>
+        <Text
+          pos="absolute"
+          w="200px"
+          h="16px"
+          left="12px"
+          right="12px"
+          top="32px"
+          fontSize="18px"
+          fontWeight="900"
+          lineHeight="20px"
+          letterSpacing="-0.01em"
+          color="#FFFFFF"
+        >
+          {subtitle}
+        </Text>
+      </GridItem>
 
       <GridItem colStart={{ base: "auto", md: 2 }} bg="#000000">
         {breakpoint === "base" && <Icon iconUrl="/playbutton.svg" />}
